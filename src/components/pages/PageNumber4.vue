@@ -1,21 +1,32 @@
 <template>
   <div class="page" :style="{ backgroundImage: `url(${bg})` }">
-    <div class="flex-1 flex flex-col pl-[6.3rem]">
+    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem]">
       <div class="flex-1">
         <div
-          class=" font-bold text-[2.5rem] text-[#759CFF] text-opacity-30 w-[20rem] border-b
-            border-[#355188] pt-10">
+          class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#759CFF] text-opacity-30
+            w-[20rem] mob:w-[13.8rem] border-b border-[#355188] pt-10">
           Our mission
         </div>
       </div>
-      <div class="flex-1 ml-[3.5rem] flex">
-        <div class="flex flex-row items-center leading-none flex-1">
-          <img src="@/assets/logo.svg" class="w-12 mr-[1.375rem]" alt="">
-          <img src="@/assets/evo.svg" class="w-[8.625rem] mr-3" alt="">
-          <div class=" font-medium text-[3.125rem] text-[#F9FAFF]">controls</div>
+      <div class="flex-1 ml-[3.5rem] flex mob:ml-0 mob:flex-none">
+        <div
+          class="flex flex-row items-center leading-none flex-1 mob:flex-wrap">
+          <img
+            src="@/assets/logo.svg"
+            class="w-12 mr-[1.375rem] mob:w-8 mob:mr-4"
+            alt="">
+          <img
+            src="@/assets/evo.svg"
+            class="w-[8.625rem] mr-3 mob:w-[5.8rem] mob:mr-2.5"
+            alt="">
+          <div
+            class=" font-medium text-[3.125rem] mob:text-[1.68rem] text-[#F9FAFF]">
+            controls
+          </div>
           <div
             class="ml-[2.6rem] w-[29rem] rounded-full bg-[#F9FAFF] h-[4.75rem] font-bold
-              text-[1.875rem] text-[#31558A] text-center leading-[4.75rem]">
+              text-[1.875rem] text-[#31558A] text-center leading-[4.75rem] mob:w-[16.2rem]
+              mob:h-[2.7rem] mob:leading-[2.7rem] mob:text-base mob:ml-0 mob:mt-[2.25rem]">
             Affordable automation
           </div>
         </div>

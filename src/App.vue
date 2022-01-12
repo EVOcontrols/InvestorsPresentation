@@ -3,25 +3,32 @@
     <!-- <page-bg :pageNum="pageNum" :device="device" /> -->
     <Splide
       :options="{
+        ...splideOptions,
+        pagination: true,
         type: 'fade',
         rewind: false,
         arrows: false,
-        wheel: true,
-        direction: 'ttb',
         height: '100vh',
-        width: '100wh',
+        fixedHeight: '100vh',
+        width: '100vw',
+        gap: '1rem',
         classes: {
           page: 'splide__pagination__page pag',
         },
       }"
-      @splide:active="changePageNum">
+      @splide:active="changePageNum"
+      ref="splide"
+      v-if="!isChangingOrient">
       <SplideSlide
         v-for="num in 15"
         :key="num">
         <component
           :is="`PageNumber${num}`"
           :device="device"
-          class="h-[100vh] w-[100vw] relative bg-[#071C32]">
+          class="h-[100vh] w-[100vw] relative bg-[#071C32]"
+          :class="[
+            isDesktop ? 'overflow-hidden' : 'overflow-y-auto'
+          ]">
         </component>
       </SplideSlide>
     </Splide>
@@ -72,19 +79,50 @@ export default {
   },
   data() {
     return {
-      device: window.innerWidth > 640 || window.innerWidth > 640 ? 'desktop' : 'mobile',
+      device: window.innerWidth >= 640 ? 'desktop' : 'mobile',
       pageNum: 1,
       isScrolling: false,
+      isChangingOrient: false,
+      changeOrientTimer: 0,
     };
   },
   computed: {
+    isDesktop() {
+      return this.device === 'desktop';
+    },
+    splideOptions() {
+      const { isDesktop } = this;
+      return {
+        direction: isDesktop ? 'ttb' : 'ltr',
+        wheel: isDesktop,
+      };
+    },
   },
-  beforeCreate() {
-    let fontSize = (window.innerWidth / 1280) * 16;
-    if (window.innerWidth > 1500) fontSize *= 0.95;
-    document.documentElement.style.fontSize = `${fontSize}px`;
+  created() {
+    this.setFontSize();
+  },
+  mounted() {
+    window.addEventListener('orientationchange', () => {
+      this.isChangingOrient = true;
+      clearTimeout(this.changeOrientTimer);
+      this.changeOrientTimer = setTimeout(() => {
+        this.setFontSize();
+      }, 300);
+    });
   },
   methods: {
+    setFontSize() {
+      console.log('orientattio changed', this.$refs.splide);
+      this.device = window.innerWidth >= 640 ? 'desktop' : 'mobile';
+      const baseRes = this.isDesktop ? 1280 : 375;
+      let fontSize = (window.innerWidth / baseRes) * 16;
+      if (window.innerWidth > 1500) fontSize *= 0.95;
+      document.documentElement.style.fontSize = `${fontSize}px`;
+      this.isChangingOrient = false;
+      // setTimeout(() => {
+      //   this.$forceUpdate();
+      // }, 100);
+    },
     changePageNum(e) {
       this.pageNum = e.index + 1;
     },
@@ -130,6 +168,7 @@ html {
   /* font-size: v-bind(fontSize); */
   font-family: "Gilroy";
   font-weight: 500;
+  background-color: #071C32;
 }
 .page {
   @apply flex flex-col;
@@ -139,5 +178,8 @@ html {
   border-color: white; */
   background-color: rgba(255, 255, 255, 0.1);
   filter: blur(1px);
+}
+ul.splide__list > li {
+  margin-bottom: 0 !important;
 }
 </style>

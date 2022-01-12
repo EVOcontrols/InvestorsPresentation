@@ -1,10 +1,10 @@
 <template>
   <div class="page" :style="{ backgroundImage: `url(${bg})` }">
-    <div class="flex-1 flex flex-col pl-[6.3rem]">
+    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem]">
       <div class="">
         <div
-          class=" font-bold text-[2.5rem] text-[#759CFF] text-opacity-30 w-[30rem] border-b
-            border-[#355188] pt-10">
+          class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#759CFF] text-opacity-30
+            w-[30rem] border-b border-[#355188] pt-10">
           Traction
         </div>
       </div>

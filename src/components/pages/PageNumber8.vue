@@ -1,46 +1,55 @@
 <template>
   <div class="page" :style="{ backgroundImage: `url(${bg})` }">
-    <div class="flex-1 flex flex-col pl-[6.3rem]">
+    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem]">
       <div class="">
         <div
-          class=" font-bold text-[2.5rem] text-[#759CFF] text-opacity-30 w-[33.5rem] border-b
-            border-[#355188] pt-10">
+          class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#759CFF] text-opacity-30
+            w-[33.5rem] border-b border-[#355188] pt-10 mob:w-[15.4rem]">
           Market
-          <span class=" text-base text-[#2B4677]">
+          <span class=" text-base text-[#2B4677] mob:text-xs">
             ***reference book attached
           </span>
         </div>
       </div>
-      <div class="flex flex-row flex-1 items-center">
-        <div class="w-[35.6rem] text-[#F9FAFF] text-[3.75rem] font-bold leading-[4.25rem]">
+      <div
+        class="flex flex-row flex-1 items-center mob:flex-1 mob:flex-col mob:items-start">
+        <div
+          class="w-[35.6rem] text-[#F9FAFF] text-[3.75rem] font-bold leading-[4.25rem]
+            mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[15.8rem] mob:mt-3">
           NG system is already distributed in next markets:
         </div>
-        <div class="flex flex-col ml-[9rem]">
+        <div class="flex flex-col ml-[9rem] mob:ml-0 mob:flex-1 mob:mt-[5.18rem]">
           <div
             v-for="n in 3"
             :key="n"
-            :class="{ 'mb-12': n !== 3 }">
+            :class="{ 'mb-12 mob:mb-4': n !== 3 }">
             <div class="flex flex-row items-center">
               <div class="w-11 h-11 rounded-full bg-[#2298FF26] font-bold text-xl text-[#A0D3FF]
-                flex items-center justify-center mr-6">
+                flex items-center justify-center mr-6 mob:w-8 mob:h-8 mob:mr-5">
                 {{ n }}
               </div>
-              <div class=" text-[1.375rem] font-bold text-[#BFDFFF] w-[12.875rem] leading-6">
+              <div
+                class=" text-[1.375rem] font-bold text-[#BFDFFF] w-[12.875rem] leading-6
+                  mob:text-base mob:leading-4 mob:w-[9.6rem]">
                 {{ texts[n - 1] }}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="flex flex-row justify-between pr-[9.4rem] pb-[4.625rem]">
+      <div
+        class="flex flex-row justify-between pr-[9.4rem] pb-[4.625rem] mob:flex-wrap mob:pr-8
+          mob:justify-start">
         <div
           v-for="n in 9"
           :key="n"
-          class="h-[4.25rem] px-3.5 rounded-2xl bg-[#2298FF26] flex items-center justify-center">
+          class="h-[4.25rem] px-3.5 rounded-2xl bg-[#2298FF26] flex items-center justify-center
+            mob:h-[2.375rem] mob:px-2 mob:shrink-0 mob:rounded-lg"
+          :class="{ 'mob:mr-3': n !== 5 && n !== 9, 'mob:mb-4': n < 6 }">
           <img
             :src="require(`@/assets/brands/${n}.svg`)"
             alt=""
-            :style="{ width: `${widths[n - 1]}rem` }">
+            :style="{ width: `${widths[n - 1] * (device === 'desktop' ? 1 : 0.55)}rem` }">
         </div>
       </div>
     </div>
