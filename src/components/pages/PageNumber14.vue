@@ -13,34 +13,36 @@
           Key employees
         </span>
       </div>
-      <div class="flex flex-row flex-1 items-center">
-        <div
-          v-for="(tile, i) in tiles"
-          :key="i"
-          class="w-[21.375rem] h-[11.125rem] rounded-2xl bg-[#2298FF26] border-[#00000036]
-            border pt-4 flex flex-row shrink-0 overflow-hidden pr-4 relative"
-          :class="{ 'ml-6': !!i && i !== 3, 'mb-6': i < 3 }">
-          <img
-            :src="require(`@/assets/people/${tile.pic}`)"
-            alt=""
-            class=" absolute bottom-0 left-0"
-            :class="tile.picStyles">
+      <div class=" flex flex-col flex-1 justify-center">
+        <div class="flex flex-row items-center flex-wrap">
           <div
-            class=" flex-1 pl-[9.2rem]">
-            <div class=" text-lg font-bold text-[#6F91B9] mb-1">
-              {{ tile.position }}
-            </div>
-            <div class=" text-2xl font-bold text-[#BFDFFF] leading-[1.5rem] mb-2">
-              {{ tile.name }}
-            </div>
-            <div class="text-[#6F91B9] leading-[1.125rem]">
-              {{ tile.text }}
+            v-for="(tile, i) in tiles"
+            :key="i"
+            class="w-[21.375rem] h-[11.125rem] rounded-2xl bg-[#2298FF26] border-[#00000036]
+              border pt-4 flex flex-row shrink-0 overflow-hidden pr-4 relative"
+            :class="{ 'ml-6': !!i && i !== 3, 'mb-6': i < 3 }">
+            <img
+              :src="require(`@/assets/people/${tile.pic}`)"
+              alt=""
+              class=" absolute bottom-0 left-0"
+              :class="tile.picStyles">
+            <div
+              class=" flex-1 pl-[9.2rem]">
+              <div class=" text-lg font-bold text-[#6F91B9] mb-1">
+                {{ tile.position }}
+              </div>
+              <div class=" text-2xl font-bold text-[#BFDFFF] leading-[1.5rem] mb-2">
+                {{ tile.name }}
+              </div>
+              <div class="text-[#6F91B9] leading-[1.125rem]">
+                {{ tile.text }}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="text-lg text-[#6F91B999] pb-[4rem] ml-[50rem]">
-        ***company structure attached
+        <div class="text-lg text-[#6F91B999] pt-2 pb-[4rem] ml-[50rem]">
+          ***company structure attached
+        </div>
       </div>
     </div>
   </div>
