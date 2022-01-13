@@ -1,5 +1,5 @@
 <template>
-  <div class="page" :style="{ backgroundImage: `url(${bg})` }">
+  <div class="page mob:!bg-center mob:!bg-cover" :style="{ backgroundImage: `url(${bg})` }">
     <div class="flex flex-col flex-1 pl-[6.375rem] mob:pl-8">
       <div class="flex-1"></div>
       <div class="flex flex-row items-center leading-none flex-1 mob:flex-none">

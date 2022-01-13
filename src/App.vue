@@ -128,7 +128,6 @@ export default {
   },
   methods: {
     setFontSize() {
-      console.log('orientattio changed', this.$refs.splide);
       this.device = window.innerWidth >= 640 ? 'desktop' : 'mobile';
       const baseRes = this.isDesktop ? 1280 : 375;
       let fontSize = (window.innerWidth / baseRes) * 16;
