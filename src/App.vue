@@ -28,7 +28,8 @@
           class="h-[100vh] w-[100vw] relative bg-[#071C32]"
           :class="[
             isDesktop ? 'overflow-hidden' : 'overflow-y-auto'
-          ]">
+          ]"
+          ref="page">
         </component>
       </SplideSlide>
     </Splide>
@@ -123,6 +124,12 @@ export default {
         this.setFontSize();
       }, 300);
     });
+    // this.$refs.page.scrollTo(0, 0);
+    // console.log(this.$refs.page);
+    // this.$refs.page.forEach((el) => {
+    //   el.$el.scrollTo(0, 0);
+    // });
+    // window.scrollTo(0, 0);
     if (this.isDesktop) return;
     // this.handOpacity = 'opacity-100';
     this.isHandShown = true;
@@ -190,6 +197,10 @@ html {
   font-family: "Gilroy";
   font-weight: 500;
   background-color: #071C32;
+}
+html, body {
+  height: 100vh;
+  overflow: hidden;
 }
 .page {
   @apply flex flex-col;
