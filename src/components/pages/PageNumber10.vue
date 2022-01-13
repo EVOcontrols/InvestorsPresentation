@@ -4,29 +4,55 @@
       <div class="">
         <div
           class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#759CFF] text-opacity-30
-            w-[33rem] border-b border-[#355188] pt-10">
+            w-[33rem] mob:w-[15.2rem] border-b border-[#355188] pt-10">
           Market
         </div>
       </div>
-      <div class="flex flex-row flex-1 items-center pb-[6rem]">
-        <div class="w-[33rem] text-[#F9FAFF] text-[3.75rem] font-bold leading-[4.25rem]">
+      <div
+        class="flex flex-row flex-1 items-center pb-[6rem] mob:flex-col mob:items-start">
+        <div
+          class="w-[33rem] text-[#F9FAFF] text-[3.75rem] font-bold leading-[4.25rem]
+            mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[18.25rem] mob:mt-3">
           EVO controls plans to capture market shares by 2027
         </div>
-        <div class="ml-[4.9rem]">
+        <div class="ml-[4.9rem] mob:ml-0 mob:flex-1 mob:flex mob:items-center">
           <table>
             <tr
               v-for="(text, i) in texts"
               :key="i"
               class="">
-                <td class="text-[2.5rem] text-[#BFDFFF] font-bold text-right pr-2.5">
-                  {{ text.big }}
+                <td
+                  class="text-[2.5rem] text-[#BFDFFF] font-bold text-right pr-2.5
+                    mob:text-[1.8rem] mob:pr-1.5 mob:text-left">
+                  <div class="mob:flex mob:flex-row mob:items-center">
+                    {{ text.big }}
+                    <div
+                      v-if="device === 'mobile'"
+                      class="text-[1.875rem] text-[#BFDFFF] font-bold whitespace-nowrap
+                        mob:text-[1.3rem] ml-2">
+                      {{ text.small }}
+                    </div>
+                  </div>
+                  <div
+                    v-if="device === 'mobile'"
+                    class="text-[1.375rem] text-[#BFDFFF] font-bold text-opacity-50
+                      w-[12.875rem] box-content mob:text-base mob:w-[7.3rem]
+                      mob:leading-4"
+                    :class="{ 'mb-6': i !== 2 }">
+                    {{ text.muted }}
+                  </div>
                 </td>
-                <td class="text-[1.875rem] text-[#BFDFFF] font-bold whitespace-nowrap">
+                <td
+                  v-if="device === 'desktop'"
+                  class="text-[1.875rem] text-[#BFDFFF] font-bold whitespace-nowrap
+                    mob:text-[1.3rem]">
                   {{ text.small }}
                 </td>
                 <td
+                  v-if="device === 'desktop'"
                   class="text-[1.375rem] text-[#BFDFFF] font-bold text-opacity-50 pl-7
-                    w-[12.875rem] box-content leading-6 py-5">
+                    w-[12.875rem] box-content leading-6 py-5 mob:text-base mob:w-[7.3rem]
+                    mob:leading-4">
                   {{ text.muted }}
                 </td>
             </tr>

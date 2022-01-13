@@ -32,6 +32,15 @@
         </component>
       </SplideSlide>
     </Splide>
+    <div
+      class="fixed bottom-0 left-0 w-full py-8 bg-black bg-opacity-50 flex items-center
+        justify-center z-10 transition-opacity duration-1000"
+      :class="handOpacity">
+      <img
+        src="@/assets/hand.svg"
+        class="w-12 opacity-50"
+        alt="">
+    </div>
   </div>
 </template>
 
@@ -84,6 +93,7 @@ export default {
       isScrolling: false,
       isChangingOrient: false,
       changeOrientTimer: 0,
+      handOpacity: 'opacity-0',
     };
   },
   computed: {
@@ -95,6 +105,7 @@ export default {
       return {
         direction: isDesktop ? 'ttb' : 'ltr',
         wheel: isDesktop,
+        dragMinThreshold: 100,
       };
     },
   },
@@ -109,6 +120,11 @@ export default {
         this.setFontSize();
       }, 300);
     });
+    if (this.isDesktop) return;
+    this.handOpacity = 'opacity-100';
+    setTimeout(() => {
+      this.handOpacity = 'opacity-0';
+    }, 2000);
   },
   methods: {
     setFontSize() {

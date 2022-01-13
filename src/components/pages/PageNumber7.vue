@@ -18,7 +18,7 @@
       </div>
       <div
         class="flex flex-row flex-1 pb-28 items-center mob:flex-col mob:items-start
-          mob:justify-center">
+          mob:justify-center mob:pb-0">
         <div
           class="flex flex-col text-[1.375rem] text-[#BFDFFF] leading-[1.68rem] mob:order-2
             mob:text-base mob:leading-5 mob:mt-6">

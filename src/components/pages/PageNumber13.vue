@@ -4,16 +4,20 @@
       <div class="">
         <div
           class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#759CFF] text-opacity-30
-            w-[19rem] border-b border-[#355188] pt-10">
+            w-[19rem] mob:w-[13.8rem] border-b border-[#355188] pt-10">
           Revenue
         </div>
       </div>
-      <div class="text-[#BFDFFF] text-[3.75rem] leading-[4.25rem] mb-8 font-normal">
+      <div
+        class="text-[#BFDFFF] text-[3.75rem] leading-[4.25rem] mb-8 font-normal
+          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[15.25rem] mob:mt-3 mob:mb-24">
         <span class="text-[#F9FAFF] font-bold">
           Projections
         </span>
       </div>
-      <div class="mb-28 flex-1 flex flex-col justify-center">
+      <div
+        class="mb-28 flex-1 flex flex-col justify-center"
+        v-if="device === 'desktop'">
         <div class=" relative h-[12rem]">
           <img
             src="@/assets/pic15.svg"
@@ -53,6 +57,50 @@
             </div>
             <div
               class=" absolute -top-1 -left-1.5 w-3 h-3 inline-block rounded-full bg-[#96CEFE]">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        v-else
+        class=" flex flex-col relative pb-8">
+        <img
+          src="@/assets/pic16.svg"
+          alt=""
+          class="absolute -top-2 left-[1.79rem] bottom-4">
+        <div class="flex flex-col pl-12">
+          <div
+            v-for="(step, i) in steps.first"
+            :key="i"
+            class="h-[5.6rem] relative text-[0.93rem] font-bold leading-[1.125rem]
+              text-[#BFDFFF]">
+            {{ step.title }}
+            <div class="text-[#BFDFFF] text-opacity-50 whitespace-pre">
+              {{ step.text }}
+            </div>
+            <div
+              class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full grad1">
+            </div>
+            <div
+              class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full bg-[#96CEFE80]">
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col pl-12 pt-6 pb-6">
+          <div
+            v-for="(step, i) in steps.second"
+            :key="i"
+            class="h-[5.2rem] relative text-[0.93rem] font-bold leading-[1.125rem]
+              text-[#BFDFFF]">
+            {{ step.title }}
+            <div class="text-[#BFDFFF] text-opacity-50 whitespace-pre">
+              {{ step.text }}
+            </div>
+            <div
+              class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full grad2">
+            </div>
+            <div
+              class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full bg-[#96CEFE]">
             </div>
           </div>
         </div>

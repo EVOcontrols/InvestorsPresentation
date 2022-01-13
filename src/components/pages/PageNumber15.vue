@@ -4,22 +4,26 @@
       <div class="flex-1">
         <div
           class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#759CFF] text-opacity-30
-            w-[31.6rem] border-b border-[#355188] pt-10">
+            w-[31.6rem] mob:w-[17rem] border-b border-[#355188] pt-10">
           Investments proposal
         </div>
       </div>
       <div class="flex-1 flex">
-        <div class="flex flex-row items-center leading-none">
+        <div
+          class="flex flex-row items-center leading-none mob:flex-col mob:items-start">
           <div
             class="text-[#F9FAFF] text-[3.75rem] font-bold leading-[4.25rem]
-              w-[32.6rem]">
+              w-[32.6rem] mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[17.8rem] mob:mt-24">
             We are looking<br>
             for early stage<br>
-            investments round
+            investments
+            <span class="mob:hidden">round</span>
           </div>
           <div
             class="ml-[10.8rem] w-[19.5rem] rounded-full bg-[#F9FAFF] h-[5.5rem] font-bold
-              text-[3.125rem] text-[#31558A] text-center leading-[5.5rem]">
+              text-[3.125rem] text-[#31558A] text-center leading-[5.5rem] mob:w-[13.5rem]
+              mob:h-[3.8rem] mob:leading-[3.8rem] mob:text-[1.875rem] mob:ml-[3.1rem]
+              mob:mt-[4.9rem]">
             $3 mln
           </div>
         </div>
