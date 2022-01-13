@@ -17,7 +17,8 @@
         <span class="text-[#F9FAFF] font-bold">Automation system</span>
       </div>
       <div
-        class="flex flex-row flex-1 pb-28 items-center mob:flex-col mob:items-start">
+        class="flex flex-row flex-1 pb-28 items-center mob:flex-col mob:items-start
+          mob:pb-0">
         <div
           class="flex flex-col text-[1.375rem] text-[#BFDFFF] leading-[1.68rem]
             mob:text-base mob:leading-5">
@@ -37,6 +38,7 @@
           </div>
         </div>
         <page-number-6-tiles :tiles="tiles" v-if="device === 'desktop'" />
+        <div class="mob:h-16 mob:w-px"></div>
       </div>
     </div>
   </div>

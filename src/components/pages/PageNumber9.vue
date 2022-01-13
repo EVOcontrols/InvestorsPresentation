@@ -17,7 +17,7 @@
       </div>
       <div
         class="flex flex-row flex-1 pb-[8rem] items-center mob:flex-col mob:items-start
-          mob:pb-12">
+          mob:pb-0">
         <div
           v-for="(tile, i) in tiles"
           :key="i"
@@ -62,6 +62,7 @@
             {{ tile.caption }}
           </div>
         </div>
+        <div class="mob:h-16 mob:w-1"></div>
       </div>
     </div>
   </div>

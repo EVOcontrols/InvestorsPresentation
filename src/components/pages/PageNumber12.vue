@@ -18,7 +18,8 @@
         2018-2021
       </div>
       <div
-        class="flex flex-row flex-1 pb-[4rem] items-center mob:flex-col mob:items-start">
+        class="flex flex-row flex-1 pb-[4rem] items-center mob:flex-col mob:items-start mob:pb-0
+          mob:flex-none">
         <div
           v-for="(tile, i) in tiles"
           :key="i"
@@ -52,6 +53,7 @@
           </div>
         </div>
       </div>
+      <div class="mob:h-16 mob:w-10"></div>
     </div>
   </div>
 </template>

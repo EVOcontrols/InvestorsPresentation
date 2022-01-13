@@ -32,15 +32,17 @@
         </component>
       </SplideSlide>
     </Splide>
-    <div
-      class="fixed bottom-0 left-0 w-full py-8 bg-black bg-opacity-50 flex items-center
-        justify-center z-10 transition-opacity duration-1000"
-      :class="handOpacity">
-      <img
-        src="@/assets/hand.svg"
-        class="w-12 opacity-50"
-        alt="">
-    </div>
+    <transition name="fade-1000">
+      <div
+        class="fixed bottom-0 left-0 w-full py-8 bg-black bg-opacity-50 flex items-center
+          justify-center z-10"
+        v-if="isHandShown">
+        <img
+          src="@/assets/hand.svg"
+          class="w-12 opacity-50"
+          alt="">
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -94,6 +96,7 @@ export default {
       isChangingOrient: false,
       changeOrientTimer: 0,
       handOpacity: 'opacity-0',
+      isHandShown: false,
     };
   },
   computed: {
@@ -121,9 +124,11 @@ export default {
       }, 300);
     });
     if (this.isDesktop) return;
-    this.handOpacity = 'opacity-100';
+    // this.handOpacity = 'opacity-100';
+    this.isHandShown = true;
     setTimeout(() => {
-      this.handOpacity = 'opacity-0';
+      // this.handOpacity = 'opacity-0';
+      this.isHandShown = false;
     }, 2000);
   },
   methods: {
@@ -131,6 +136,7 @@ export default {
       this.device = window.innerWidth >= 640 ? 'desktop' : 'mobile';
       const baseRes = this.isDesktop ? 1280 : 375;
       let fontSize = (window.innerWidth / baseRes) * 16;
+      // let fontSize = this.isDesktop ? (window.innerWidth / baseRes) * 16 : 16
       if (window.innerWidth > 1500) fontSize *= 0.95;
       document.documentElement.style.fontSize = `${fontSize}px`;
       this.isChangingOrient = false;
@@ -196,5 +202,16 @@ html {
 }
 ul.splide__list > li {
   margin-bottom: 0 !important;
+}
+.flex-col > *, .flex-row > * {
+  flex-shrink: 0;
+}
+.fade-1000-enter-active,
+.fade-1000-leave-active {
+  transition: opacity 1s ease;
+}
+.fade-1000-enter-from,
+.fade-1000-leave-to {
+  opacity: 0;
 }
 </style>

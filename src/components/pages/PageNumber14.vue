@@ -16,7 +16,7 @@
         </span>
       </div>
       <div
-        class=" flex flex-col flex-1 justify-center mob:justify-start mob:flex-none mob:mb-8">
+        class=" flex flex-col flex-1 justify-center mob:justify-start mob:flex-none mob:mb-0">
         <div class="flex flex-row items-center flex-wrap mob:flex-col mob:items-start">
           <div
             v-for="(tile, i) in tiles"
@@ -27,7 +27,7 @@
             :class="{
               'ml-6 mob:ml-0': !!i && i !== 3,
               'mb-6 mob:mb-[1.125rem]': i < 3,
-              'mob:mb-[1.125rem]': i >= 3,
+              'mob:mb-[1.125rem]': i >= 3 && i !== tiles.length - 1,
             }">
             <img
               :src="require(`@/assets/people/${tile.pic}`)"
@@ -54,6 +54,7 @@
           ***company structure attached
         </div>
       </div>
+      <div class="mob:h-16 mob:w-1"></div>
     </div>
   </div>
 </template>

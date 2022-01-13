@@ -18,7 +18,7 @@
             mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[15.8rem] mob:mt-3">
           NG system is already distributed in next markets:
         </div>
-        <div class="flex flex-col ml-[9rem] mob:ml-0 mob:flex-1 mob:mt-[5.18rem]">
+        <div class="flex flex-col ml-[9rem] mob:ml-0 mob:flex-1 mob:justify-center">
           <div
             v-for="n in 3"
             :key="n"
@@ -39,7 +39,7 @@
       </div>
       <div
         class="flex flex-row justify-between pr-[9.4rem] pb-[4.625rem] mob:flex-wrap mob:pr-8
-          mob:justify-start">
+          mob:justify-start mob:pt-8">
         <div
           v-for="n in 9"
           :key="n"

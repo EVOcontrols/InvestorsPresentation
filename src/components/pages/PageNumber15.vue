@@ -13,7 +13,7 @@
           class="flex flex-row items-center leading-none mob:flex-col mob:items-start">
           <div
             class="text-[#F9FAFF] text-[3.75rem] font-bold leading-[4.25rem]
-              w-[32.6rem] mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[17.8rem] mob:mt-24">
+              w-[32.6rem] mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[17.8rem] mob:mt-6">
             We are looking<br>
             for early stage<br>
             investments

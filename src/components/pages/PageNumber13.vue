@@ -63,11 +63,14 @@
       </div>
       <div
         v-else
-        class=" flex flex-col relative pb-8">
-        <img
+        class=" flex flex-col relative">
+        <!-- <img
           src="@/assets/pic16.svg"
           alt=""
-          class="absolute -top-2 left-[1.79rem] bottom-4">
+          class="absolute -top-2 left-[1.79rem] bottom-4"> -->
+        <div
+          class=" absolute top-2 bottom-0 left-[1.82rem] w-0.5 line">
+        </div>
         <div class="flex flex-col pl-12">
           <div
             v-for="(step, i) in steps.first"
@@ -86,12 +89,13 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col pl-12 pt-6 pb-6">
+        <div class="flex flex-col pl-12 pt-6">
           <div
             v-for="(step, i) in steps.second"
             :key="i"
             class="h-[5.2rem] relative text-[0.93rem] font-bold leading-[1.125rem]
-              text-[#BFDFFF]">
+              text-[#BFDFFF]"
+            :class="{ '!h-auto': i === steps.second.length - 1 }">
             {{ step.title }}
             <div class="text-[#BFDFFF] text-opacity-50 whitespace-pre">
               {{ step.text }}
@@ -105,6 +109,7 @@
           </div>
         </div>
       </div>
+      <div class="h-16" v-if="device === 'mobile'"></div>
     </div>
   </div>
 </template>
@@ -162,5 +167,8 @@ export default {
 .grad2 {
   background: radial-gradient(50% 50% at 50% 50%, #199CF1 0%, #1C9FF2 100%);
   filter: blur(16px);
+}
+.line {
+  background: linear-gradient(235deg, rgba(191,223,255,0) 0%, rgba(191,223,255,1) 100%);
 }
 </style>

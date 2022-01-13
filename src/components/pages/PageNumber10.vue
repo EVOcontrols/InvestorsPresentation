@@ -9,7 +9,8 @@
         </div>
       </div>
       <div
-        class="flex flex-row flex-1 items-center pb-[6rem] mob:flex-col mob:items-start">
+        class="flex flex-row flex-1 items-center pb-[6rem] mob:flex-col mob:items-start
+          mob:pb-0">
         <div
           class="w-[33rem] text-[#F9FAFF] text-[3.75rem] font-bold leading-[4.25rem]
             mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[18.25rem] mob:mt-3">
@@ -58,6 +59,7 @@
             </tr>
           </table>
         </div>
+        <div class="mob:h-8 mob:w-1"></div>
       </div>
     </div>
   </div>

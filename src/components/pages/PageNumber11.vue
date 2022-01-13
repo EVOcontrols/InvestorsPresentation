@@ -10,10 +10,11 @@
       </div>
       <div
         class="w-[41rem] text-[#BFDFFF] text-[3.75rem] leading-[4.25rem] mb-12
-          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[13.1rem] mob:mt-3">
+          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[13.1rem] mob:mt-3 mob:mb-0">
         <span class="text-[#F9FAFF] font-bold">Market approach</span>
       </div>
-      <div class="flex flex-col flex-1 justify-center mb-[20%]">
+      <div class="mob:h-16 mob:w-10"></div>
+      <div class="flex flex-col flex-1 justify-center mb-[20%] mob:mb-0 mob:flex-none">
         <div
           class="text-2xl text-[#BFDFFF] leading-7 w-[26.25rem] mb-[3.75rem] mob:text-base
             mob:w-[13.1rem] mob:mb-[1.38rem]">
@@ -47,7 +48,7 @@
         <template v-else>
           <div
             class="flex flex-col w-[19.5rem] h-[6.75rem] rounded-2xl bg-[#2298FF26] px-4 py-2"
-            :class="{ 'mt-[2.3rem]': !!i }"
+            :class="{ 'mt-[2.18rem]': !!i }"
             v-for="(row, i) in rows"
             :key="i">
             <div class="flex flex-row border-b border-[#6280BC] pb-2 items-center">
@@ -65,6 +66,7 @@
               {{ row.caption }}
             </div>
           </div>
+          <div class="h-16 w-1"></div>
         </template>
       </div>
     </div>

@@ -79,7 +79,7 @@ export default {
     bg: null,
     tiles: [
       { title: 'High equipment price', text: 'Due to monopoly of several<br>world known manufecturers' },
-      { title: 'Extremelly high integration cost', text: 'Due to lack of specialists, high investments to start as integrator' },
+      { title: 'Extremelly high integration cost', text: 'Due to lack of specialists, high<br>investments to start as integrator' },
     ],
   }),
   created() {
