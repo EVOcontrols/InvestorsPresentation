@@ -113,6 +113,9 @@ export default {
       };
     },
   },
+  beforeCreate() {
+    window.location.hash = 'slide1';
+  },
   created() {
     this.setFontSize();
   },
@@ -153,6 +156,7 @@ export default {
     },
     changePageNum(e) {
       this.pageNum = e.index + 1;
+      window.location.hash = `slide${this.pageNum.toString()}`;
     },
   },
 };
