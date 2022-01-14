@@ -3,8 +3,8 @@
     <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem]">
       <div class="">
         <div
-          class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#759CFF] text-opacity-30
-            w-[33.25rem] border-b border-[#355188] pt-10 flex flex-row mob:w-[13.8rem]">
+          class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#2B4677]
+            w-[33.25rem] border-b border-[#2B4677] pt-10 flex flex-row mob:w-[13.8rem]">
             <img src="@/assets/evo_grey.svg" alt="" class="w-[4.875rem] mob:w-[3.375rem]">
             <span class="ml-2 mt-0.5">
               solution
