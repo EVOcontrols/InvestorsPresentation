@@ -1,5 +1,5 @@
 <template>
-  <div class=" relative bg-[#071C32]">
+  <div class=" relative bg-[#071C32] h-full">
     <!-- <page-bg :pageNum="pageNum" :device="device" /> -->
     <Splide
       :options="{
@@ -8,8 +8,8 @@
         type: 'fade',
         rewind: false,
         arrows: false,
-        height: '100vh',
-        fixedHeight: '100vh',
+        height: '100%',
+        fixedHeight: '100%',
         width: '100vw',
         gap: '1rem',
         classes: {
@@ -25,7 +25,7 @@
         <component
           :is="`PageNumber${num}`"
           :device="device"
-          class="h-[100vh] w-[100vw] relative bg-[#071C32]"
+          class="h-full w-[100vw] relative bg-[#071C32]"
           :class="[
             isDesktop ? 'overflow-hidden' : 'overflow-y-auto'
           ]"
@@ -197,13 +197,25 @@ html {
   font-family: "Gilroy";
   font-weight: 500;
   background-color: #071C32;
+  /* height: -webkit-fill-available; */
 }
-html, body {
-  height: 100vh;
+html, body, #app {
+  /* height: 100vh; */
   overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* height: -webkit-fill-available; */
 }
+/* body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+} */
 .page {
   @apply flex flex-col;
+  /* height: -webkit-fill-available; */
 }
 .pag:not(.is-active) {
   /* border-width: 1px;
@@ -211,8 +223,12 @@ html, body {
   background-color: rgba(255, 255, 255, 0.1);
   filter: blur(1px);
 }
+.splide, .splide__track, .splide__list {
+  height: 100%;
+}
 ul.splide__list > li {
   margin-bottom: 0 !important;
+  /* height: -webkit-fill-available; */
 }
 .flex-col > *, .flex-row > * {
   flex-shrink: 0;
