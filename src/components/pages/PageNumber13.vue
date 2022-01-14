@@ -1,6 +1,6 @@
 <template>
   <div class="page" :style="{ backgroundImage: `url(${bg})` }">
-    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem]">
+    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem] mob:overflow-hidden">
       <div class="">
         <div
           class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#2B4677]
@@ -10,7 +10,7 @@
       </div>
       <div
         class="text-[#BFDFFF] text-[3.75rem] leading-[4.25rem] mb-8 font-normal
-          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[15.25rem] mob:mt-3 mob:mb-24">
+          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[15.25rem] mob:mt-3 mob:mb-2">
         <span class="text-[#F9FAFF] font-bold">
           Projections
         </span>
@@ -61,55 +61,53 @@
           </div>
         </div>
       </div>
-      <div
-        v-else
-        class=" flex flex-col relative">
-        <!-- <img
-          src="@/assets/pic16.svg"
-          alt=""
-          class="absolute -top-2 left-[1.79rem] bottom-4"> -->
+      <div v-else class="overflow-y-auto flex-1">
         <div
-          class=" absolute top-2 bottom-0 left-[1.82rem] w-0.5 line">
-        </div>
-        <div class="flex flex-col pl-12">
+          class=" flex flex-col relative">
+          <div class="h-[5.5rem] w-1"></div>
           <div
-            v-for="(step, i) in steps.first"
-            :key="i"
-            class="h-[5.6rem] relative text-[0.93rem] font-bold leading-[1.125rem]
-              text-[#BFDFFF]">
-            {{ step.title }}
-            <div class="text-[#BFDFFF] text-opacity-50 whitespace-pre">
-              {{ step.text }}
-            </div>
+            class=" absolute top-24 bottom-0 left-[1.82rem] w-0.5 line">
+          </div>
+          <div class="flex flex-col pl-12">
             <div
-              class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full grad1">
+              v-for="(step, i) in steps.first"
+              :key="i"
+              class="h-[5.6rem] relative text-[0.93rem] font-bold leading-[1.125rem]
+                text-[#BFDFFF]">
+              {{ step.title }}
+              <div class="text-[#BFDFFF] text-opacity-50 whitespace-pre">
+                {{ step.text }}
+              </div>
+              <div
+                class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full grad1">
+              </div>
+              <div
+                class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full bg-[#96CEFE80]">
+              </div>
             </div>
+          </div>
+          <div class="flex flex-col pl-12 pt-6">
             <div
-              class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full bg-[#96CEFE80]">
+              v-for="(step, i) in steps.second"
+              :key="i"
+              class="h-[5.2rem] relative text-[0.93rem] font-bold leading-[1.125rem]
+                text-[#BFDFFF]"
+              :class="{ '!h-auto': i === steps.second.length - 1 }">
+              {{ step.title }}
+              <div class="text-[#BFDFFF] text-opacity-50 whitespace-pre">
+                {{ step.text }}
+              </div>
+              <div
+                class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full grad2">
+              </div>
+              <div
+                class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full bg-[#96CEFE]">
+              </div>
             </div>
           </div>
         </div>
-        <div class="flex flex-col pl-12 pt-6">
-          <div
-            v-for="(step, i) in steps.second"
-            :key="i"
-            class="h-[5.2rem] relative text-[0.93rem] font-bold leading-[1.125rem]
-              text-[#BFDFFF]"
-            :class="{ '!h-auto': i === steps.second.length - 1 }">
-            {{ step.title }}
-            <div class="text-[#BFDFFF] text-opacity-50 whitespace-pre">
-              {{ step.text }}
-            </div>
-            <div
-              class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full grad2">
-            </div>
-            <div
-              class=" absolute top-1 -left-6 w-3 h-3 inline-block rounded-full bg-[#96CEFE]">
-            </div>
-          </div>
-        </div>
+        <div class="h-16" v-if="device === 'mobile'"></div>
       </div>
-      <div class="h-16" v-if="device === 'mobile'"></div>
     </div>
   </div>
 </template>

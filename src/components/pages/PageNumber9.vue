@@ -1,6 +1,6 @@
 <template>
   <div class="page" :style="{ backgroundImage: `url(${bg})` }">
-    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem]">
+    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem] mob:overflow-hidden">
       <div class="">
         <div
           class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#2B4677]
@@ -10,14 +10,15 @@
       </div>
       <div
         class="w-[41rem] text-[#BFDFFF] text-[3.75rem] leading-[4.25rem] mb-8
-          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[15.25rem] mob:mt-3">
+          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[15.25rem] mob:mt-3 mob:mb-2">
         <span class="text-[#F9FAFF] font-bold">
           Capitalization
         </span>
       </div>
       <div
         class="flex flex-row flex-1 pb-[8rem] items-center mob:flex-col mob:items-start
-          mob:pb-0">
+          mob:pb-0 mob:overflow-y-auto">
+        <div class="mob:h-6 mob:w-1"></div>
         <div
           v-for="(tile, i) in tiles"
           :key="i"

@@ -1,6 +1,6 @@
 <template>
   <div class="page" :style="{ backgroundImage: `url(${bg})` }">
-    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem]">
+    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem] mob:overflow-hidden">
       <div class="">
         <div
           class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#2B4677]
@@ -10,13 +10,15 @@
       </div>
       <div
         class="text-[#BFDFFF] text-[3.75rem] leading-[4.25rem] mb-8 font-normal
-          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-auto mob:mt-3">
+          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-auto mob:mt-3 mob:mb-2">
         <span class="text-[#F9FAFF] font-bold">
           Key employees
         </span>
       </div>
       <div
-        class=" flex flex-col flex-1 justify-center mob:justify-start mob:flex-none mob:mb-0">
+        class=" flex flex-col flex-1 justify-center mob:justify-start mob:mb-0
+          mob:overflow-y-auto">
+        <div class="mob:h-[5.5rem] mob:w-1"></div>
         <div class="flex flex-row items-center flex-wrap mob:flex-col mob:items-start">
           <div
             v-for="(tile, i) in tiles"
@@ -53,8 +55,8 @@
         <div class="text-lg text-[#6F91B999] pt-2 pb-[4rem] ml-[50rem] mob:hidden">
           ***company structure attached
         </div>
+        <div class="mob:h-16 mob:w-1"></div>
       </div>
-      <div class="mob:h-16 mob:w-1"></div>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="page" :style="{ backgroundImage: `url(${bg})` }">
-    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem]">
+    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem] mob:overflow-hidden">
       <div class="">
         <div
           class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#2B4677]
@@ -18,7 +18,8 @@
       </div>
       <div
         class="flex flex-row flex-1 pb-28 items-center mob:flex-col mob:items-start
-          mob:pb-0">
+          mob:pb-0 mob:overflow-y-auto">
+        <div class="mob:h-10 mob:w-1"></div>
         <div
           class="flex flex-col text-[1.375rem] text-[#BFDFFF] leading-[1.68rem]
             mob:text-base mob:leading-5">

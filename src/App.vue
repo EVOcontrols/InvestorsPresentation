@@ -27,7 +27,7 @@
           :device="device"
           class="h-full w-[100vw] relative bg-[#071C32]"
           :class="[
-            isDesktop ? 'overflow-hidden' : 'overflow-y-auto'
+            isDesktop ? 'overflow-hidden' : 'overflow-hidden'
           ]"
           ref="page">
         </component>

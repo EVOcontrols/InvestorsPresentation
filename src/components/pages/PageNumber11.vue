@@ -1,6 +1,6 @@
 <template>
   <div class="page" :style="{ backgroundImage: `url(${bg})` }">
-    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem]">
+    <div class="flex-1 flex flex-col pl-[6.3rem] mob:pl-[1.875rem] mob:overflow-hidden">
       <div class="">
         <div
           class=" font-bold text-[2.5rem] mob:text-[1.68rem] text-[#2B4677]
@@ -10,11 +10,13 @@
       </div>
       <div
         class="w-[41rem] text-[#BFDFFF] text-[3.75rem] leading-[4.25rem] mb-12
-          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[13.1rem] mob:mt-3 mob:mb-0">
+          mob:text-[2.5rem] mob:leading-[2.8rem] mob:w-[13.1rem] mob:mt-3 mob:mb-2">
         <span class="text-[#F9FAFF] font-bold">Market approach</span>
       </div>
-      <div class="mob:h-16 mob:w-10"></div>
-      <div class="flex flex-col flex-1 justify-center mb-[20%] mob:mb-0 mob:flex-none">
+      <div
+        class="flex flex-col flex-1 justify-center mb-[20%] mob:mb-0
+          mob:overflow-y-auto mob:justify-start">
+        <div class="mob:h-[5.5rem] mob:w-10"></div>
         <div
           class="text-2xl text-[#BFDFFF] leading-7 w-[26.25rem] mb-[3.75rem] mob:text-base
             mob:w-[13.1rem] mob:mb-[1.38rem]">
