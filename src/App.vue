@@ -113,11 +113,9 @@ export default {
       };
     },
   },
-  beforeCreate() {
-    window.location.hash = 'slide1';
-  },
   created() {
     this.setFontSize();
+    this.setHashAndTitle();
   },
   mounted() {
     window.addEventListener('orientationchange', () => {
@@ -127,17 +125,9 @@ export default {
         this.setFontSize();
       }, 300);
     });
-    // this.$refs.page.scrollTo(0, 0);
-    // console.log(this.$refs.page);
-    // this.$refs.page.forEach((el) => {
-    //   el.$el.scrollTo(0, 0);
-    // });
-    // window.scrollTo(0, 0);
     if (this.isDesktop) return;
-    // this.handOpacity = 'opacity-100';
     this.isHandShown = true;
     setTimeout(() => {
-      // this.handOpacity = 'opacity-0';
       this.isHandShown = false;
     }, 2000);
   },
@@ -150,13 +140,14 @@ export default {
       if (window.innerWidth > 1500) fontSize *= 0.95;
       document.documentElement.style.fontSize = `${fontSize}px`;
       this.isChangingOrient = false;
-      // setTimeout(() => {
-      //   this.$forceUpdate();
-      // }, 100);
     },
     changePageNum(e) {
       this.pageNum = e.index + 1;
-      window.location.hash = `slide${this.pageNum.toString()}`;
+      this.setHashAndTitle();
+    },
+    setHashAndTitle() {
+      window.location.hash = `slide${this.pageNum}`;
+      document.title = `EVO controls | Slide ${this.pageNum}`;
     },
   },
 };
